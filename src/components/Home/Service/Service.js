@@ -9,6 +9,7 @@ const Service = ({ service: { title, description, img } }) => {
         <h5 style={textStyle} className="font-weight-bold my-3">{title }</h5>
         <p style={textStyle}>{description}</p>
         <h1>Hello Word!</h1>
+        <h2>Lorem ipsum dolor sit amet.</h2>
       </div>
     </div>
   );
