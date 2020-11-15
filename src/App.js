@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/Home/Home/Home';
 import Login from './components/Login/Login/Login';
 
@@ -16,6 +16,9 @@ const App = () => {
           </Route>
           <Route exact path="/">
             <Home></Home>
+          </Route>
+          <Route path="/notFount">
+
           </Route>
           <Route path="*">
 
