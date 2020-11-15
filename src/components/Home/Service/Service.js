@@ -10,6 +10,7 @@ const Service = ({ service: { title, description, img } }) => {
         <p style={textStyle}>{description}</p>
         <h1>Hello Word!</h1>
         <h2>Lorem ipsum dolor sit amet.</h2>
+        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores quis reiciendis alias? Neque, qui pariatur?</h4>
       </div>
     </div>
   );
