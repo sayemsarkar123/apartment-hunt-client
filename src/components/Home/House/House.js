@@ -1,6 +1,8 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
-const House = ({ house: { name, price, img } }) => {
+const House = ({ house: { _id, name, price, img } }) => {
+  const history = useHistory();
   const textStyle = {color: '#275a53'}
   return (
     <div className="col-md-4 mt-4">
@@ -22,7 +24,7 @@ const House = ({ house: { name, price, img } }) => {
         </div>
         <div className="d-flex align-items-center mt-4">
           <h3 style={textStyle} className="m-0 font-weight-bold">{`$${price}`}</h3>
-          <button style={{background: '#275a53'}} className="btn text-white px-4 ml-auto rounded-0">View Details</button>
+          <button onClick={() => history.push(`/details/${_id}`)} style={{background: '#275a53'}} className="btn text-white px-4 ml-auto rounded-0">View Details</button>
         </div>
       </div>
       </div>

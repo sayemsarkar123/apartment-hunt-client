@@ -1,6 +1,7 @@
 import React, { createContext, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './components/Home/Home/Home';
+import HomeDetails from './components/HomeDetails/HomeDetails/HomeDetails';
 import Login from './components/Login/Login/Login';
 
 export const LoginContext = createContext();
@@ -11,6 +12,9 @@ const App = () => {
     <LoginContext.Provider value={[user, setUser]}>
       <Router>
         <Switch>
+          <Route path="/details/:id">
+            <HomeDetails></HomeDetails>
+          </Route>
           <Route path="/login">
             <Login></Login>
           </Route>
