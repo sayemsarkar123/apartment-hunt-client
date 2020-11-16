@@ -15,22 +15,22 @@ const Header = () => {
   <div className="collapse navbar-collapse" id="navbarNav">
     <ul className="navbar-nav ml-auto">
       <li className="nav-item active">
-        <Link className="nav-link font-weight-bold text-dark" to="#">Home <span className="sr-only">(current)</span></Link>
+        <Link className="nav-link font-weight-bold text-dark" to="/">Home <span className="sr-only">(current)</span></Link>
       </li>
       <li className="nav-item ml-4">
-        <Link className="nav-link font-weight-bold text-dark" to="#">About</Link>
+        <Link className="nav-link font-weight-bold text-dark" to="/about">About</Link>
       </li>
       <li className="nav-item ml-4">
         <Link className="nav-link font-weight-bold text-dark" to="/dashboard">Service</Link>
       </li>
       <li className="nav-item ml-4">
-        <Link className="nav-link font-weight-bold text-dark" to="#">Concerns</Link>
+        <Link className="nav-link font-weight-bold text-dark" to="/concerns">Concerns</Link>
       </li>
       <li className="nav-item ml-4">
-        <Link className="nav-link font-weight-bold text-dark" to="#">Event</Link>
+        <Link className="nav-link font-weight-bold text-dark" to="/event">Event</Link>
       </li>
       <li className="nav-item ml-4">
-        <Link className="nav-link font-weight-bold text-dark" to="#">Contact</Link>
+        <Link className="nav-link font-weight-bold text-dark" to="/contact">Contact</Link>
       </li>
       <li className="nav-item ml-4">
               {
