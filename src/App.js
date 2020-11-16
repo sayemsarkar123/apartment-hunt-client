@@ -11,7 +11,6 @@ import HomeDetails from './components/HomeDetails/HomeDetails/HomeDetails';
 import Login from './components/Login/Login/Login';
 
 export const LoginContext = createContext();
-
 const App = () => {
   const [user, setUser] = useState({});
   return (
