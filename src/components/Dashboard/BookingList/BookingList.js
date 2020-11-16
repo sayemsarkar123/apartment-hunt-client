@@ -3,7 +3,6 @@ import './bookingList.css';
 
 const BookingList = () => {
   const [data, setData] = useState([])
-  console.log(data);
   useEffect(() => {
       fetch(`http://localhost:4000/getBookings`)
       .then(res => res.json())
@@ -49,13 +48,13 @@ const BookingList = () => {
                     <tbody style={{ height: "610px", overflow: 'auto'}}>
                       {
                         data.map((bookingInfo) =>
-                              <tr style={{fontWeight:'500'}}>
+                              <tr key={bookingInfo._id} style={{fontWeight:'500'}}>
                               <td>{bookingInfo.name}</td>
                               <td>{bookingInfo.email}</td>
                               <td>{bookingInfo.phone}</td>
                               <td style={{ maxWidth: '150px' }}>{bookingInfo.message}</td>
                               <td>
-                                <select onChange={(e) => handleStatus(e, bookingInfo._id)} className="custom-select mr-5">
+                                <select onChange={(e) => handleStatus(e, bookingInfo._id)} className="custom-select mr-5 border-0">
                                   {
                                     bookingInfo.status === 'Pending'
                                     &&
@@ -63,7 +62,7 @@ const BookingList = () => {
                                         <option value="Pending" defaultValue>{bookingInfo.status}</option>
                                         <option value="Ongoing">Ongoing</option>
                                         <option value="Done">Done</option>
-                                    </>                                    
+                                    </>
                                   }
                                   {
                                     bookingInfo.status === 'Ongoing'

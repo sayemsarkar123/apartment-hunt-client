@@ -48,88 +48,82 @@ const AddHouse = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-row">
         <div className="form-group col-md-6">
-        <label for="title">Service Title</label>
+        <label htmlFor="title">Service Title</label>
           <input
             onBlur={handleBlur}
             type="text"
             name="title"
             ref={register({ required: true })}
             placeholder="Enter title"
-            class="form-control input-field"
-            id=""
+            className="form-control input-field"
           />
         </div>
         <div className="form-group col-md-6">
-        <label for="price">Price</label>
+        <label htmlFor="price">Price</label>
           <input
             onBlur={handleBlur}
             type="text"
             name="price"
             ref={register({ required: true })}
             placeholder="Price"
-            class="form-control input-field"
-            id=""
+            className="form-control input-field"
           />
         </div>
         </div>
         <div className="form-row">
         <div className="form-group col-md-6">
-        <label for="location">Location</label>
+        <label htmlFor="location">Location</label>
           <input
             onBlur={handleBlur}
             type="text"
             name="location"
             ref={register({ required: true })}
             placeholder="Enter Location"
-            class="form-control input-field"
-            id=""
+            className="form-control input-field"
           />
         </div>
         <div className="form-group col-md-6">
-        <label for="bathroom">No. of Bathroom</label>
+        <label htmlFor="bathroom">No. of Bathroom</label>
           <input
             onBlur={handleBlur}
             type="text"
             name="bathroom"
             ref={register({ required: true })}
             placeholder="No. of Bathroom"
-            class="form-control input-field"
-            id=""
+            className="form-control input-field"
           />
         </div>
         </div>
-        <div class="form-row">
+        <div className="form-row">
         <div className="form-group col-md-6">
-        <label for="bedroom">No. of Bedroom</label>
+        <label htmlFor="bedroom">No. of Bedroom</label>
           <input
             onBlur={handleBlur}
             type="text"
             name="bedroom"
             ref={register({ required: true })}
             placeholder="No. of Bedroom"
-            class="form-control input-field"
-            id=""
+            className="form-control input-field"
           />
         </div>
 
-          <div class="form-group col-md-6">
-            <label htmlFor="files" className="btn btn-outline-success ml-3 mt-5">
+          <div className="form-group col-md-6">
+            <label style={{marginTop: '42px'}} htmlFor="files" className="btn btn-outline-success">
               <FontAwesomeIcon icon={faCloudUploadAlt} />
-              Upload image
+              <span className="ml-2">Upload image</span>
             </label>
             <input
               onChange={handleFileChange}
               type="file"
-              style={{ visibility: "hidden" }}
-              placeholder=""
-              class="form-control w-25 py-4"
+              style={{ display: 'none' }}
+              className="form-control w-25 py-4"
               id="files"
             />
           </div>
         </div>
 
         <div className="form-group">
-          <button type="submit" className="btn btn-success btn-lg">
+          <button type="submit" className="btn btn-success">
             {" "}
             Submit{" "}
           </button>
