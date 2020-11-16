@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import { LoginContext } from '../../../App';
 
 const Header = () => {
+  const [user, setUser] = useContext(LoginContext);
   const history = useHistory();
   return (
     <div className="container">
@@ -31,7 +33,9 @@ const Header = () => {
         <Link className="nav-link font-weight-bold text-dark" to="#">Contact</Link>
       </li>
       <li className="nav-item ml-4">
-        <button onClick={() => history.push('/login')} style={{background: '#275a53'}} className="btn px-3 text-white">Login</button>
+              {
+                user.isSignIn ? <button onClick={() => setUser({})} style={{background: '#275a53'}} className="btn px-3 text-white">Log Out</button> : <button onClick={() => history.push('/login')} style={{background: '#275a53'}} className="btn px-3 text-white">Login</button>
+              }
       </li>
     </ul>
   </div>

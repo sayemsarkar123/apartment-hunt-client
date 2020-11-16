@@ -6,21 +6,49 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import { firebaseConfig } from '../Config/Config';
 import { LoginContext } from '../../../App';
+import { useHistory, useLocation } from 'react-router-dom';
 
 const Login = () => {
   if (firebase.apps.length === 0) {
     firebase.initializeApp(firebaseConfig);
   }
+  const history = useHistory();
+  const location = useLocation();
+  const { from } = location.state || { from: { pathname: "/" } };
   const [user, setUser] = useContext(LoginContext);
-  const onSubmit = data => console.log(data);
   const [newUser, setNewUser] = useState(false);
+
+  const updateLoginContext = (result) => {
+    const { displayName: name, email, photoURL: photo } = result.user;
+    setUser({ ...user, isSignIn: true, name, email, photo });
+    history.replace(from);
+  }
+
+  const updateProfile = (displayName) => {
+    const user = firebase.auth().currentUser;
+    user.updateProfile({displayName})
+  }
+
+  const onSubmit = data => {
+    const { fname, lname, email, password } = data;
+    if (!newUser) {
+      firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(result => updateLoginContext(result))
+        .catch(() => alert(`The email or password you entered isn't correct. Try entering it again.`));
+    }
+    if (newUser) {
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then(() => {
+          updateProfile(`${fname} ${lname}`);
+          alert('Account successfully created');
+        })
+        .catch(error => alert(error.message));
+    }
+  };
 
   const signInWithProvider = (provider) => {
     firebase.auth().signInWithPopup(provider)
-      .then(result => {
-        const { displayName: name, email, photoURL: photo } = result.user;
-        setUser({ ...user, name, email, photo });
-      })
+      .then(result => updateLoginContext(result))
       .catch(error => console.log(error));
   }
   const googleSignIn = () => {
