@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
-const SignUp = ({ setNewUser, onSubmit }) => {
+const SignUp = ({setNewUser, onSubmit, facebookSignIn, googleSignIn}) => {
   const { register, handleSubmit, watch, errors } = useForm();
   return (
     <div className="container py-5">
@@ -40,11 +40,11 @@ const SignUp = ({ setNewUser, onSubmit }) => {
             <span>Or</span>
             <div style={{width: '45%', border: '1px solid #bfbfbf'}}></div>
           </div>
-          <div className="d-flex align-items-center w-75 mx-auto border border-aqua rounded-pill p-1 mt-4 mb-2">
+          <div onClick={facebookSignIn} className="d-flex align-items-center w-75 mx-auto border border-aqua rounded-pill p-1 mt-4 mb-2">
             <img style={{maxWidth: '30px'}} src="https://i.ibb.co/pXCd6g8/Facebook.png" alt=""/>
             <Link to="#" className="mx-auto text-dark text-decoration-none">Continue with Facebook</Link>
           </div>
-          <div className="d-flex align-items-center w-75 mx-auto border border-aqua rounded-pill p-1">
+          <div onClick={googleSignIn} className="d-flex align-items-center w-75 mx-auto border border-aqua rounded-pill p-1">
             <img style={{maxWidth: '30px'}} src="https://i.ibb.co/Vw3rRF7/Google.png" alt=""/>
             <Link to="#" className="mx-auto text-dark text-decoration-none">Continue with Google</Link>
           </div>
