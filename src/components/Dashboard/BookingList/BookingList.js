@@ -4,7 +4,7 @@ const BookingList = () => {
   const [data, setData] = useState([])
   console.log(data);
   useEffect(() => {
-      fetch(`http://localhost:4001/getBookings`)
+      fetch(`http://localhost:4000/getBookings`)
       .then(res => res.json())
       .then(data => {
         setData(data)
