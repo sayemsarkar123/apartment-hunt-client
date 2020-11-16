@@ -9,6 +9,7 @@ import Event from './components/Home/Pages/Event/Event';
 import NotFound from './components/Home/Pages/NotFound/NotFound';
 import HomeDetails from './components/HomeDetails/HomeDetails/HomeDetails';
 import Login from './components/Login/Login/Login';
+import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 
 export const LoginContext = createContext();
 
@@ -27,9 +28,9 @@ const App = () => {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/dashboard">
+          <PrivateRoute path="/dashboard">
               <Dashboard />
-          </Route>
+          </PrivateRoute>
           <Route path="/about">
               <About />
           </Route>
