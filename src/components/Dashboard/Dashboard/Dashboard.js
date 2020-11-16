@@ -6,7 +6,6 @@ import BookingList from '../BookingList/BookingList';
 import apartment from '../logo/apartment 1.png';
 import house from '../logo/Group 33351.png';
 import logo from '../logo/Logo.png';
-import userImg from '../logo/munna.jpg';
 import plus from '../logo/plus 1.png';
 import MyRent from '../MyRent/MyRent';
 
