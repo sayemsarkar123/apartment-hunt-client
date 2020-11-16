@@ -19,8 +19,8 @@ const Login = () => {
   const [newUser, setNewUser] = useState(false);
 
   const updateLoginContext = (result) => {
-    const { displayName: name, email, photoURL: photo } = result.user;
-    setUser({ ...user, isSignIn: true, name, email, photo });
+    const { displayName: name, email, photoURL } = result.user;
+    setUser({ ...user, isSignIn: true, name, email, photoURL });
     history.replace(from);
   }
 

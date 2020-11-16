@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { LoginContext } from '../../../App';
 import './myRent.css';
 
 const MyRent = () => {
+  const [user, setUser] = useContext(LoginContext);
+  const [bookings, setBookings] = useState([]);
+  useEffect(() => {
+      fetch(`http://localhost:4000/getUserBookings/?email=${user.email}`)
+      .then(response => response.json())
+      .then(result => setBookings(result))
+  }, []);
   return (
     <div >
             <div className="py-2">
-               <h4>Add Rent House</h4>
+               <h4>My Rent</h4>
             </div>
             <div className="d-flex flex-wrap p-5" style={{ height: '460px', overflow: 'auto', backgroundColor: 'rgb(242 247 255)' }}>
                 <table className="table p-3 bg-white table-hover text-center" >
@@ -16,12 +24,16 @@ const MyRent = () => {
                         <th scope="col">Action</th>
                       </tr>
                     </thead>
-                    <tbody style={{ height: "610px", overflow: 'auto'}}>
-                        <tr style={{fontWeight:'500'}}>
-                          <td>Luxury Vila</td>
-                          <td>$1200</td>
-                          <td className="details-btn btn">View Details</td>
-                        </tr>
+          <tbody style={{ height: "610px", overflow: 'auto' }}>
+            {
+              bookings.map(({_id, title, price}) => (
+                <tr key={_id} style={{fontWeight:'500'}}>
+                      <td>{title}</td>
+                      <td>${price}</td>
+                      <td className="details-btn btn">View Details</td>
+                </tr>
+              ))
+            }
                     </tbody>
                 </table>
             </div>

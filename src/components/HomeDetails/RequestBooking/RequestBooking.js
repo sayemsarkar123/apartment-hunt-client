@@ -1,12 +1,14 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-const RequestBooking = ({homeDetails: {name, price, img}}) => {
+const RequestBooking = ({ homeDetails: { title, price, img } }) => {
+  const photoURL = img?.size ? `data:${img.contentType};base64,${img.img}` : img;
+  console.log(img);
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = data => {
     fetch('http://localhost:4000/addBooking', {
   method: 'POST',
-  body: JSON.stringify({...data, status: 'Pending'}),
+  body: JSON.stringify({...data, status: 'Pending', title, price}),
   headers: {
     'Content-type': 'application/json; charset=UTF-8',
   },
@@ -23,27 +25,27 @@ const RequestBooking = ({homeDetails: {name, price, img}}) => {
         <div className="col-md-7">
           <div className="row">
             <div className="col-md-12">
-              <img className="img-fluid" src={img} alt=""/>
+              <img className="img-fluid" src={photoURL} alt=""/>
             </div>
             <div className="col-md-12 my-3">
               <div className="row">
                 <div className="col-md-3">
-                <img className="img-fluid" src={img} alt=""/>
+                <img className="img-fluid" src={photoURL} alt=""/>
                 </div>
                 <div className="col-md-3">
-                <img className="img-fluid" src={img} alt=""/>
+                <img className="img-fluid" src={photoURL} alt=""/>
                 </div>
                 <div className="col-md-3">
-                <img className="img-fluid" src={img} alt=""/>
+                <img className="img-fluid" src={photoURL} alt=""/>
                 </div>
                 <div className="col-md-3">
-                <img className="img-fluid" src={img} alt=""/>
+                <img className="img-fluid" src={photoURL} alt=""/>
                 </div>
               </div>
             </div>
             <div className="col-md-12">
               <div className="d-flex justify-content-between">
-                <h4 style={textStyle} className="font-weight-bold">{name}</h4>
+                <h4 style={textStyle} className="font-weight-bold">{title}</h4>
                 <h3 style={textStyle} className="font-weight-bold">{`$${price}`}</h3>
               </div>
               <p className="text-secondary">3000 sq-ft., 3 Bedroom, Semi-furnished, Luxurious, South facing Apartment for Rent in Rangs Malancha, Melbourne.</p>

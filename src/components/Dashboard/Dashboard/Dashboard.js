@@ -8,20 +8,19 @@ import house from '../logo/Group 33351.png';
 import logo from '../logo/Logo.png';
 import plus from '../logo/plus 1.png';
 import MyRent from '../MyRent/MyRent';
- 
+
 const Dashboard = () => {
-  let currentLocation = useLocation()
-  const [user, setUser] = useContext(LoginContext)
-  console.log(user);
+  const [user, setUser] = useContext(LoginContext);
+  const currentLocation = useLocation();
   return (
     <div className="container-fluid">
             <nav className="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-light ">
                 <Link className="navbar-brand" to="/">
                     <img src={logo} height="70" alt="" />
                 </Link>
-                {/* <div className="ml-auto">
-                <p> <img src={user.photo} height="25" style={{ borderRadius: '50%' }} alt="" /> &nbsp; {user.name}</p>
-                </div> */}
+                <div className="ml-auto">
+          <p> <img src={user.photoURL} height="25" style={{ borderRadius: '50%' }} alt="" /> &nbsp; {user.name}</p>
+                </div>
             </nav>
             <div className="container-fluid">
                 <div className="row mx-2">
