@@ -17,25 +17,25 @@ const App = () => {
     <LoginContext.Provider value={[user, setUser]}>
       <Router>
         <Switch>
-          <Route exact path="/login">
+          <Route path="/login">
             <Login />
           </Route>
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/dashboard">
+          <Route path="/dashboard">
               <Dashboard />
           </Route>
-          <Route exact path="/about">
+          <Route path="/about">
               <About />
           </Route>
-          <Route exact path="/concerns">
+          <Route path="/concerns">
               <Concrens />
           </Route>
-          <Route exact path="/contact">
+          <Route path="/contact">
             <Contact />
           </Route>
-          <Route exact path="/event">
+          <Route path="/event">
             <Event />
           </Route>
           <Route path="*">
