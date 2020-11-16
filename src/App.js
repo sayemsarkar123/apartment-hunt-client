@@ -7,6 +7,7 @@ import Concrens from './components/Home/Pages/Concrens/Concrens';
 import Contact from './components/Home/Pages/Contact/Contact';
 import Event from './components/Home/Pages/Event/Event';
 import NotFound from './components/Home/Pages/NotFound/NotFound';
+import HomeDetails from './components/HomeDetails/HomeDetails/HomeDetails';
 import Login from './components/Login/Login/Login';
 
 export const LoginContext = createContext();
@@ -17,6 +18,9 @@ const App = () => {
     <LoginContext.Provider value={[user, setUser]}>
       <Router>
         <Switch>
+          <Route path="/details/:id">
+            <HomeDetails></HomeDetails>
+          </Route>
           <Route path="/login">
             <Login />
           </Route>
