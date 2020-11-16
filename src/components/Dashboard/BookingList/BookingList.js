@@ -69,8 +69,8 @@ const BookingList = () => {
                                     &&
                                     <>
                                       <option value="Ongoing" defaultValue>{bookingInfo.status}</option>
-                                      <option value="Done">Pending</option>
-                                      <option value="Pending">Done</option>
+                                      <option value="Done">Done</option>
+                                      <option value="Pending">Pending</option>
                                     </>
                                   }
                                   {
@@ -79,7 +79,7 @@ const BookingList = () => {
                                     <>
                                       <option value="Done" defaultValue>{bookingInfo.status}</option>
                                       <option value="Ongoing">Ongoing</option>
-                                      <option value="Pending">Done</option>
+                                      <option value="Pending">Pending</option>
                                     </>
                                   }
                                 </select>
