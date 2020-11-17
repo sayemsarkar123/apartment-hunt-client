@@ -6,7 +6,7 @@ const RequestBooking = ({ homeDetails: { title, price, img } }) => {
   console.log(img);
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = data => {
-    fetch('http://localhost:4000/addBooking', {
+    fetch('https://apartment-hunt-2020.herokuapp.com/addBooking', {
   method: 'POST',
   body: JSON.stringify({...data, status: 'Pending', title, price}),
   headers: {

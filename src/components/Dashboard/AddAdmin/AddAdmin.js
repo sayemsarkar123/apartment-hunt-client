@@ -6,7 +6,7 @@ const AddAdmin = () => {
     const [emailList, setEmailList] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:4000/getAdminEmails`)
+        fetch(`https://apartment-hunt-2020.herokuapp.com/getAdminEmails`)
             .then(res => res.json())
             .then(data => setEmailList(data))
     }, [])
@@ -17,7 +17,7 @@ const AddAdmin = () => {
 
     const handleFormSubmit = (e) => {
         console.log(email)
-        fetch('http://localhost:4000/addAdmin', {
+        fetch('https://apartment-hunt-2020.herokuapp.com/addAdmin', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(email)

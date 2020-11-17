@@ -6,7 +6,7 @@ const MyRent = () => {
   const [user, setUser] = useContext(LoginContext);
   const [bookings, setBookings] = useState([]);
   useEffect(() => {
-      fetch(`http://localhost:4000/getUserBookings/?email=${user.email}`)
+      fetch(`https://apartment-hunt-2020.herokuapp.com/getUserBookings/?email=${user.email}`)
       .then(response => response.json())
       .then(result => setBookings(result))
   }, []);

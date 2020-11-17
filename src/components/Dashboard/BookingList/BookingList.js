@@ -4,7 +4,7 @@ import './bookingList.css';
 const BookingList = () => {
   const [data, setData] = useState([])
   useEffect(() => {
-      fetch(`http://localhost:4000/getBookings`)
+      fetch(`https://apartment-hunt-2020.herokuapp.com/getBookings`)
       .then(res => res.json())
       .then(data => {
         setData(data)
@@ -15,7 +15,7 @@ const BookingList = () => {
       const sendData = { id, newStatus }
       console.log(sendData);
 
-      fetch(`http://localhost:4000/updateStatus`, {
+      fetch(`https://apartment-hunt-2020.herokuapp.com/updateStatus`, {
           method: 'PATCH',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(sendData)

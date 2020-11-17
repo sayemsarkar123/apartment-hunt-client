@@ -8,7 +8,7 @@ const HomeDetails = () => {
   const [homeDetails, setHomeDetails] = useState({});
   const { id } = useParams();
   useEffect(() => {
-    fetch(`http://localhost:4000/getHomeDetails/${id}`)
+    fetch(`https://apartment-hunt-2020.herokuapp.com/getHomeDetails/${id}`)
       .then(response => response.json())
       .then(result => setHomeDetails(result));
   }, [id]);

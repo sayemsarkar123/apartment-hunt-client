@@ -27,7 +27,7 @@ const AddHouse = () => {
       formData.append('bedroom', info.bedroom);
       formData.append('bathroom', info.bathroom);
 
-      fetch('http://localhost:4000/addHouse', {
+      fetch('https://apartment-hunt-2020.herokuapp.com/addHouse', {
         method: 'POST',
         body: formData
       })

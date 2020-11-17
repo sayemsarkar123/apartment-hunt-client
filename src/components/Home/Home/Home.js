@@ -13,7 +13,7 @@ const Home = () => {
     setHouses(result.filter(house => re.test(house.title)));
   }
   useEffect(() => {
-    fetch('http://localhost:4000/getHouses')
+    fetch('https://apartment-hunt-2020.herokuapp.com/getHouses')
       .then(response => response.json())
       .then(result => userSearch ?  filterHouses(result): setHouses(result));
   }, [userSearch]);

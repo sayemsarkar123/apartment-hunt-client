@@ -17,7 +17,7 @@ const Dashboard = () => {
   const [admin, setAdmin] = useState(false)
   console.log(admin);
   useEffect(() => {
-    fetch(`http://localhost:4000/checkAdmin/?email=${user.email}`)
+    fetch(`https://apartment-hunt-2020.herokuapp.com/checkAdmin/?email=${user.email}`)
     .then(res => res.json())
     .then(result => setAdmin(result))
   },[])
