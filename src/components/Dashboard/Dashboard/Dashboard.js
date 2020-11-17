@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { LoginContext } from '../../../App';
+import AddAdmin from '../AddAdmin/AddAdmin';
 import AddHouse from '../AddHouse/AddHouse';
 import BookingList from '../BookingList/BookingList';
+import admin from '../logo/addAdmin.png';
 import apartment from '../logo/apartment 1.png';
 import house from '../logo/Group 33351.png';
 import logo from '../logo/Logo.png';
@@ -45,6 +47,12 @@ const Dashboard = () => {
                                         My Rent
                                     </Link>
                                 </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/dashboard/addAdmin">
+                                      <img src={admin} alt="" height="18"/>   &nbsp;
+                                        Add Admin
+                                    </Link>
+                                </li>
                             </ul>
 
                         </div>
@@ -64,6 +72,11 @@ const Dashboard = () => {
                             currentLocation.pathname === '/dashboard/myRent'
                             &&
                             <MyRent></MyRent>
+                        }
+                        {
+                            currentLocation.pathname === '/dashboard/addAdmin'
+                            &&
+                            <AddAdmin></AddAdmin>
                         }
                     </div>
                 </div>
