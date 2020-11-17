@@ -1,0 +1,9 @@
+.main-container {
+  background-color: #f4f8ff;
+}
+.submit-btn {
+  background-color: #00c070 !important;
+  color: white !important;
+  width: 100px !important;
+  border: 1px solid #00c62b !important;
+}

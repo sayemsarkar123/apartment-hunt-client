@@ -1,17 +1,23 @@
-import React, { useContext, useState } from 'react';
-import Header from '../../Home/Header/Header';
-import SignIn from '../SignIn/SignIn';
-import SignUp from '../SignUp/SignUp';
 import firebase from "firebase/app";
 import "firebase/auth";
-import { firebaseConfig } from '../Config/Config';
-import { LoginContext } from '../../../App';
+import React, { useContext, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
+import { LoginContext } from '../../../App';
+import Header from '../../Home/Header/Header';
+import { firebaseConfig } from '../Config/Config';
+import SignIn from '../SignIn/SignIn';
+import SignUp from '../SignUp/SignUp';
+export const initializeFirebaseLogin = () => {
+  if (firebase.apps.length === 0) {
+      firebase.initializeApp(firebaseConfig);
+  }
+}
 
 const Login = () => {
   if (firebase.apps.length === 0) {
     firebase.initializeApp(firebaseConfig);
   }
+  
   const history = useHistory();
   const location = useLocation();
   const { from } = location.state || { from: { pathname: "/" } };
