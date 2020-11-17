@@ -2,7 +2,6 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 
 const House = ({ house: { _id, title, price, img, bedroom, bathroom, location } }) => {
-  console.log(img.contentType);
   const history = useHistory();
   const textStyle = {color: '#275a53'}
   return (
@@ -24,7 +23,7 @@ const House = ({ house: { _id, title, price, img, bedroom, bathroom, location } 
             <h6 className="text-secondary m-0">{bathroom ? bathroom : 2} Bathroom</h6>
         </div>
         <div className="d-flex align-items-center mt-4">
-          <h3 style={textStyle} className="m-0 font-weight-bold">{`$${price}`}</h3>
+          <h3 style={textStyle} className="m-0 font-weight-bold">${price}</h3>
           <button onClick={() => history.push(`/details/${_id}`)} style={{background: '#275a53'}} className="btn text-white px-4 ml-auto rounded-0">View Details</button>
         </div>
       </div>

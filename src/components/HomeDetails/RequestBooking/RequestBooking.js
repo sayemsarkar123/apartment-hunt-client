@@ -46,7 +46,7 @@ const RequestBooking = ({ homeDetails: { title, price, img } }) => {
             <div className="col-md-12">
               <div className="d-flex justify-content-between">
                 <h4 style={textStyle} className="font-weight-bold">{title}</h4>
-                <h3 style={textStyle} className="font-weight-bold">{`$${price}`}</h3>
+                <h3 style={textStyle} className="font-weight-bold">${price || 0}</h3>
               </div>
               <p className="text-secondary">3000 sq-ft., 3 Bedroom, Semi-furnished, Luxurious, South facing Apartment for Rent in Rangs Malancha, Melbourne.</p>
               <h5 style={textStyle} className="font-weight-bold">Price Details-</h5>

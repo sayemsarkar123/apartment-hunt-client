@@ -33,7 +33,7 @@ const AddHouse = () => {
       })
       .then(res => res.json())
       .then(data => {
-        console.log(data);
+        if (data) alert('Successfully Added');
       })
       .catch(error => {
         console.log(error);
