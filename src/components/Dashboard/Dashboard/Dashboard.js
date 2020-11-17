@@ -57,7 +57,7 @@ const Dashboard = () => {
                                     <img src={addAdminIcon} alt="" height="18"/>   &nbsp;
                                       Add Admin
                                   </Link>
-                                </li> 
+                                </li>
                                 </>
                                 :
                                  <li className="nav-item">
@@ -75,9 +75,13 @@ const Dashboard = () => {
                         {
                             currentLocation.pathname === '/dashboard'
                             &&
-                            admin ?
+                            admin &&
                             <BookingList></BookingList>
-                            :
+                      }
+                      {
+                            currentLocation.pathname === '/dashboard'
+                            &&
+                            !admin &&
                             <MyRent></MyRent>
                         }
                         {
