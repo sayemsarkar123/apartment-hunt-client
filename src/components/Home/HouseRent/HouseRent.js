@@ -1,13 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import House from '../House/House';
 
-const HouseRent = () => {
-  const [houses, setHouses] = useState([]);
-  useEffect(() => {
-    fetch('http://localhost:4000/getHouses')
-      .then(response => response.json())
-      .then(result => setHouses(result));
-  }, []);
+const HouseRent = ({ houses }) => {
   const textStyle = { color: '#275a53' };
   return (
     <section className="py-4" style={{backgroundColor: '#f1f6f4'}}>
